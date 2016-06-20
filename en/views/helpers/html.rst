@@ -568,6 +568,15 @@ Once you have buffered javascript, you can output it as you would any other
 
     // In your layout
     echo $this->fetch('script');
+    
+In Template file :
+<?php $this->Html->scriptStart(array('block' => 'scriptBottom', 'inline' => false)); ?>
+$(document).ready(function(){
+    console.log('OK');
+});
+<?php $this->Html->scriptEnd(); ?>
+In Layout file :
+<?= $this->fetch('scriptBottom'); ?>
 
 Creating Nested Lists
 ---------------------
